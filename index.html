@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/8a4506393a.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 20%;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container2 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .container3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        span {
+            display: block;
+            text-align: center;
+        }
+
+        .calculator {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        
+
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="calculator">
+            <h1>Basic Calulator</h1>
+
+            <!--Input-->
+            <div class="container1">
+                <input type="number" class="num1">
+                <input type="number" class="num2">
+            </div>
+
+            <!--Button-->
+            <div class="container2">
+                <button class="add"><i class="fa-solid fa-plus"></i></button>
+                <button class="subtract"><i class="fa-solid fa-minus"></i></button>
+                <button class="multiply"><i class="fa-solid fa-xmark"></i></button>
+                <button class="divide"><i class="fa-solid fa-divide"></i></button>
+            </div>
+
+            <!--Output-->
+            <div class="container3">
+                <p>Answer:<span class="output"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <!--Script-->
+    <script>
+        let num1 = document.querySelector('.num1');
+        let num2 = document.querySelector('.num2');
+        let add = document.querySelector('.add');
+        let subtract = document.querySelector('.subtract');
+        let multiply = document.querySelector('.multiply');
+        let divide = document.querySelector('.divide');
+        let output = document.querySelector('.output');
+
+        add.addEventListener('click', function(){
+            output.innerHTML = parseInt(num1.value) + parseInt(num2.value);
+        });
+
+        subtract.addEventListener('click', function(){
+            output.innerHTML = parseInt(num1.value) - parseInt(num2.value);
+        });
+
+        multiply.addEventListener('click', function(){
+            output.innerHTML = parseInt(num1.value) * parseInt(num2.value);
+        });
+
+        divide.addEventListener('click', function(){
+            output.innerHTML = parseInt(num1.value) / parseInt(num2.value);
+        });
+    </script>
+</body>
+</html>
